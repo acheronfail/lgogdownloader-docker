@@ -7,7 +7,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   libboost-date-time-dev libboost-iostreams-dev libssl-dev help2man cmake \
   pkg-config zlib1g-dev qtwebengine5-dev ninja-build wget
 
-WORKDIR /data
+WORKDIR /opt
 COPY ./entrypoint.sh ./entrypoint.sh
 RUN wget https://github.com/Sude-/lgogdownloader/releases/download/v3.8/lgogdownloader-3.8.tar.gz
 RUN tar -xvzf ./lgogdownloader-3.8.tar.gz
@@ -18,5 +18,6 @@ RUN cd lgogdownloader-3.8 && cmake -B build \
   -DUSE_QT_GUI=ON -GNinja \
   && ninja -Cbuild install
 
+WORKDIR /data
 CMD ["lgogdownloader"]
-ENTRYPOINT ["/data/entrypoint.sh"]
+ENTRYPOINT ["/opt/entrypoint.sh"]
