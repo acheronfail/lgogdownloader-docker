@@ -1,10 +1,3 @@
-# PLEASE NOTE:
-
-You probably want to use https://github.com/shakeyourbunny/lgogdownloader-docker instead of this one!
-This was a Proof of Concept and is slow and bloated. The linked one has had a bit more love!
-
-For more historical info, see: https://github.com/Sude-/lgogdownloader/issues/211
-
 # `lgogdownloader-docker`
 
 It's `lgogdownloader` in a docker image.
